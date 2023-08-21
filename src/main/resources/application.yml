@@ -19,5 +19,5 @@ spring:
     servlet:
       content-type: text/html
 mybatis:
-  type-aliases-package: com.example.demo.pojo
+  type-aliases-package: com.example.demo1.pojo
   mapper-locations: classpath:mapper/*.xml

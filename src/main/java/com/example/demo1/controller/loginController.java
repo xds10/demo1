@@ -26,14 +26,14 @@ public class loginController {
         //return "haha"+username+password;
 
         boolean VRet =uv.Userverify(username,password);
-        return "/login1.html";
-        /*
-        if(VRet){
+        //return "/login1.html";
 
+        if(VRet){
+            return "登录成功";
         }
         else{
             return "登录失败";
-        }*/
+        }
     }
     @RequestMapping(value = "/login")
     @ResponseBody
