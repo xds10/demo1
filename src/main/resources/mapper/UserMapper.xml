@@ -11,4 +11,9 @@
     <select id="findbyUsername" resultMap="UserMap">
         select * FROM user where username=#{username}
     </select>
+    <select id="addUser" resultMap="UserMap">
+        insert into user (username,password,phone_num)
+            value (#{username},#{password},#{phone_num});
+    </select>
+
 </mapper>

@@ -12,36 +12,35 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.HashMap;
 import  java.util.Map;
 import java.util.Objects;
-
 @Controller
-public class loginController {
-
+public class registerController {
     @Autowired
     private UVerify uv;
-    /*
-    登录
-     */
-    @RequestMapping(value = "/loginback" , method = RequestMethod.POST)
+    @RequestMapping(value = "/registerback" , method = RequestMethod.POST)
     @ResponseBody
-    public String loginback(String username ,
-                            String password){
-        System.out.println("爱你dd!");
+    public String registerback(String username ,
+                            String password,String phone_num){
+        System.out.println("爱你register!");
         //return "haha"+username+password;
-
-        boolean VRet =uv.Userverify(username,password);
+        /*
+        验证短信验证码(还没写
+         */
+        boolean VRet =uv.Registerify(username,password,phone_num);
         //return "/login1.html";
-
+        /*
+        VRet:验证username是否存在(username为学号,我认为没什么用)
+        也可以验证一下密码强度
+         */
         if(VRet){
-            return "登录成功";
+            return "注册成功";
         }
         else{
-            return "登录失败";
+            return "注册失败";
         }
     }
-    @RequestMapping(value = "/login")
+    @RequestMapping(value = "/register")
     //@ResponseBody
-    public String login(){
-        return "login";
+    public String register(){
+        return "register";
     }
-
 }

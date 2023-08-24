@@ -25,4 +25,15 @@ public class UVerifyImpl implements UVerify{
         else
             return false;
     }
+
+    @Override
+    public Boolean Registerify(String username, String password, String phone_num) {
+        userBean u=userm.findbyUsername(username);
+        if (u != null ) {
+            return false;
+        }
+
+        userm.addUser(username,password,phone_num);
+        return true;
+    }
 }
